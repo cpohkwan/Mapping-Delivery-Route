@@ -1,0 +1,2947 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Delivery</title>
+
+    <style>
+      #scrolly {
+        position: relative;
+        padding: 1.5rem 2rem 1.5rem 2rem;
+      }
+
+      .scrolly-overlay {
+        position: relative;
+        padding: 0;
+        max-width: 35rem;
+        margin: 0 auto;
+      }
+
+      .sticky-thing {
+        position: -webkit-sticky;
+        position: sticky;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        z-index: 0;
+        top: 0;
+        height: 100vh; /*vh = viewport height*/
+
+        /* Center everything inside */
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .ai2html *:hover {
+        fill: rgb(0, 13, 255);
+      }
+
+      .step {
+        margin: 0 auto 2rem auto;
+        margin-bottom: 25rem;
+        background-color: #eee;
+        background-color: #fff;
+        color: black;
+      }
+
+      .step p {
+        text-align: center;
+        padding: 1rem;
+        font-size: 1.2rem;
+      }
+
+      .hidden {
+        visibility: hidden;
+      }
+
+      @media (max-width: 600px) {
+        .text-container {
+          padding-left: 1em;
+          padding-right: 1em;
+        }
+      }
+      /* Set something to be a certain percent of the page's height (in this case, 75%) */
+      .full-bleed-image {
+        padding: 2em;
+        min-height: 75vh;
+        align-items: center;
+      }
+
+      .story-body {
+        margin: 0 auto;
+        max-width: 790px;
+      }
+
+      #scrolly.side-by-side > div {
+        flex-basis: 0;
+        flex-grow: 1;
+        flex-shrink: 1;
+        padding: 0.75em;
+      }
+
+      #scrolly.side-by-side .scrolly-overlay {
+        margin-top: 70vh;
+        order: 0;
+        /* Change these to adjust sizing options */
+        min-width: 10rem;
+        max-width: 20rem;
+      }
+
+      #scrolly.side-by-side .sticky-thing {
+        order: 1;
+        flex-grow: 2;
+      }
+
+      .content {
+        text-align: center;
+        margin: 0 2.5rem 1rem 2.5rem; /*top right bottom left*/
+      }
+
+      .content h1 {
+        font-size: 2.5rem;
+        font-family: "Calibri", "Trebuchet MS", sans-serif;
+        text-align: center;
+      }
+
+      .content byline {
+        font-size: 1.2rem;
+        font-family: "Calibri", "Trebuchet MS", sans-serif;
+        font-style: italic;
+        text-align: left;
+      }
+
+      .content p {
+        font-size: 1.3rem;
+        font-family: "Calibri", "Trebuchet MS", sans-serif;
+        text-align: justify;
+        margin-bottom: 2em;
+      }
+
+      .content h5 {
+        font-weight: normal;
+        font-size: 1rem;
+        font-family: "Calibri", "Trebuchet MS", sans-serif;
+        text-align: center;
+        font-style: italic;
+      }
+
+      #repeat1 {
+        fill:orange;
+      }
+
+      #repeat2 {
+        fill:orange;
+      }
+
+      #repeat3 {
+        fill:orange;
+      }
+
+      #repeat4 {
+        fill:orange;
+      }
+
+      #repeat5 {
+        fill:orange;
+      }
+
+      .responsive {
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.0.4/scrollama.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
+  </head>
+
+  <body>
+    <div class="content">
+      <h1>Our Long and Expensive Delivery Route</h1>
+      <byline>Story by Cheong Poh Kwan</byline>
+      <p>
+        Covid-19 has turned many bored people in Singapore into small-time
+        home-based business owners, selling everything from handmade soy
+        candles, homebrewed coffee to all kinds of grandma recipes on platforms
+        like Instagram, Cococart, Carousell and Shopee.
+      </p>
+
+      <p>
+        My husband David and I jumped on the bandwagon in Dec 2020 too. We sell
+        a Hakka heritage dish called Lei Cha, or Lui Cha -- depending on whether
+        you're pronouncing it in Mandarin Chinese or the Hakka/Cantonese
+        dialect. It's been widely (mis)translated as Thunder Tea although it's
+        got nothing to do with thunder, thunderstorm or Thor.
+      </p>
+
+      <img
+        src="greensmith-sgfoodiehunt.png"
+        alt="Greensmith Thunder Tea Cauliflower Rice Set"
+        class="responsive"
+        width="500"
+        height="600"
+      />
+      <p></p>
+
+      <h5>
+        This is a keto-friendly version of our Thunder Tea rice set. Image by
+        @sgfoodiehunt, an Instagram food reviewer.
+      </h5>
+
+      <p>
+        You can think of Lei Cha as the Chinese Hakka version of Japanese
+        ochazuke, Korean bibimbap, Hawaiian poke bowl, or simply a healthy and
+        hearty salad bowl. The dressing that comes with it is a basilicious
+        paste that we blend using a number of herbs, peanuts and sesame seeds.
+        It can be diluted with hot water or tea, and served as a soup on the
+        side.
+      </p>
+
+      <video max-width="100%" height="auto" controls class="responsive">
+        <source src="Greensmith-video.ogg" type="video/ogg" />
+        <source src="Greensmith-video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <p></p>
+
+      <h5>
+        This video shows the making of our Thunder Tea paste. Video by Pei Rong.
+      </h5>
+
+      <p>
+        Our Lei Cha soup paste has been quite a hit with our customers, in
+        particular among health-concious and weight-conscious women. We've sold
+        over 800 jars of them on Shopee and another 400 or so on Instagram - a
+        result that we are pretty happy with considering how little marketing we
+        do.
+      </p>
+
+      <p>
+        Making the Lei Cha paste is a laborious affair, but an even bigger
+        problem we've been facing is the delivery cost. The charges for engaging
+        professional logistics companies to deliver our chilled paste to many
+        locations across the island within a few hours are prohibitive. Hence,
+        we've been doing it ourselves, spending hours and hours on the road
+        every Saturday to fulfill the orders for the week.
+      </p>
+      <p>
+        Here's an example of our very long delivery route on July 2, the day
+        when fuel price in Singapore surged to $3.15 or higher per liter -
+        depending on the brand and type of fuel.
+      </p>
+    </div>
+
+    <section id="scrolly">
+      <div class="sticky-thing">
+        <div class="ai2html-container">
+          <!-- Generated by ai2html v0.113.0 - 2022-08-03 22:07 -->
+          <!-- ai file: new-delivery-map.ai -->
+          <style media="screen,print">
+            #g-new-delivery-map-Artboard_1-box,
+            #g-new-delivery-map-Artboard_1-box .g-artboard {
+              margin: 0 auto;
+            }
+            #g-new-delivery-map-Artboard_1-box p {
+              margin: 0;
+            }
+            #g-new-delivery-map-Artboard_1-box .g-aiAbs {
+              position: absolute;
+            }
+            #g-new-delivery-map-Artboard_1-box .g-aiImg {
+              position: absolute;
+              top: 0;
+              display: block;
+              width: 100% !important;
+            }
+            #g-new-delivery-map-Artboard_1-box .g-aiSymbol {
+              position: absolute;
+              box-sizing: border-box;
+            }
+            #g-new-delivery-map-Artboard_1-box .g-aiPointText p {
+              white-space: nowrap;
+            }
+            #g-new-delivery-map-Artboard_1 {
+              position: relative;
+              overflow: hidden;
+            }
+            #g-new-delivery-map-Artboard_1 p {
+              font-family: arial, helvetica, sans-serif;
+              line-height: 10px;
+              height: auto;
+              opacity: 1;
+              letter-spacing: 0.375em;
+              font-size: 8px;
+              text-align: left;
+              color: rgb(0, 0, 0);
+              text-transform: none;
+              padding-bottom: 0;
+              padding-top: 0;
+              mix-blend-mode: normal;
+              font-style: normal;
+              position: static;
+            }
+            #g-new-delivery-map-Artboard_1 .g-pstyle0 {
+              height: 10px;
+              color: rgb(0, 255, 0);
+            }
+            #g-new-delivery-map-Artboard_1 .g-pstyle1 {
+              height: 10px;
+            }
+            #g-new-delivery-map-Artboard_1 .g-pstyle2 {
+              height: 10px;
+              color: rgb(29, 129, 162);
+            }
+            #g-new-delivery-map-Artboard_1 .g-pstyle3 {
+              height: 10px;
+              color: rgb(21, 96, 122);
+            }
+          </style>
+
+          <div id="g-new-delivery-map-Artboard_1-box" class="ai2html">
+            <!-- Artboard: Artboard_1 -->
+            <div
+              id="g-new-delivery-map-Artboard_1"
+              class="g-artboard"
+              style=""
+              data-aspect-ratio="1.667"
+              data-min-width="0"
+            >
+              <div style="padding: 0 0 60% 0"></div>
+              <img
+                id="g-new-delivery-map-Artboard_1-img"
+                class="g-new-delivery-map-Artboard_1-img g-aiImg"
+                alt=""
+                src="new-delivery-map-Artboard_1.png"
+              />
+              <!-- Generator: Adobe Illustrator 26.3.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+              <svg
+                class="g-new-delivery-map-Artboard_1-interactions-img g-aiImg"
+                version="1.2"
+                baseProfile="tiny"
+                id="g-new-delivery-map-Artboard_1-interactions-img"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                viewBox="0 0 1000 600"
+                overflow="visible"
+                xml:space="preserve"
+              >
+                <g>
+                  <path
+                    id="routeOne"
+                    data-name="routeOne"
+                    fill="none"
+                    stroke="#18A1CD"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-dasharray="2,2"
+                    d="
+		M387.964,254.143l12.329,58.963l-2.531,21.806l55.193-13.469l1.198,3.392l-20.012,44.456L481,360.007"
+                  />
+
+                  <path
+                    id="routeTwo"
+                    data-name="routeTwo"
+                    fill="none"
+                    stroke="#18A1CD"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-dasharray="2,2"
+                    d="
+		M481.032,360.448l77.922-65.908l-2.852-17.232l31.655-17.165"
+                  />
+
+                  <path
+                    id="routeThree"
+                    data-name="routeThree"
+                    fill="none"
+                    stroke="#18A1CD"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-dasharray="2,2"
+                    d="
+		M587.757,260.143l97.697,31.275"
+                  />
+
+                  <path
+                    id="routeFour"
+                    data-name="routeFour"
+                    fill="none"
+                    stroke="#18A1CD"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-dasharray="2,2"
+                    d="
+		M685.454,291.418l43.247-60.643"
+                  />
+
+                  <path
+                    id="routeFive"
+                    data-name="routeFive"
+                    fill="none"
+                    stroke="#18A1CD"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-dasharray="2,2"
+                    d="
+		M728.701,230.774l-110.386-40.019l-1.991,3.983l42.116-24.136"
+                  />
+
+                  <path
+                    id="routeSix"
+                    data-name="routeSix"
+                    fill="none"
+                    stroke="#18A1CD"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-dasharray="2,2"
+                    d="
+		M658.44,170.603l-212.538-50.011"
+                  />
+
+                  <path
+                    id="routeSeven"
+                    data-name="routeSeven"
+                    fill="none"
+                    stroke="#18A1CD"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-dasharray="2,2"
+                    d="
+		M445.902,120.592l-89.024,89.304l-28.719,44.288l-0.489,20.136l5.349,2.295l0,0"
+                  />
+                  <g id="markersLayer" data-name="markersLayer">
+                    <g id="airport" data-name="airport">
+                      <path
+                        fill="#15607A"
+                        d="M786.293,252.4l2.48-8h-3.6l-2.24,2h-2l1.6-3.4l-1.6-3.4h2l2.24,2h3.6l-2.48-8h2l4.48,8h5.48
+				c0,0,0.24,0.027,0.72,0.08c0.48,0.053,0.787,0.127,0.92,0.22c0.133,0.093,0.373,0.233,0.72,0.42
+				c0.347,0.187,0.453,0.413,0.32,0.68c0,0.427-0.253,0.753-0.76,0.98s-1,0.353-1.48,0.38l-0.76,0.04h-5.16l-4.48,8H786.293z"
+                      />
+                      <g display="none">
+                        <text
+                          transform="matrix(1 0 0 1 750.5273 211.6094)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          S
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 758.8633 211.6094)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          i
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 763.6406 211.6094)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          n
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 771.0898 211.6094)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          g
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 778.5391 211.6094)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          a
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 785.9883 211.6094)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          p
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 793.4375 211.6094)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          o
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 800.8867 211.6094)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          r
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 806.5508 211.6094)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          e
+                        </text>
+                      </g>
+                      <g display="none">
+                        <text
+                          transform="matrix(1 0 0 1 750.5273 211.6094)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          S
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 758.8633 211.6094)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          i
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 763.6406 211.6094)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          n
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 771.0898 211.6094)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          g
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 778.5391 211.6094)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          a
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 785.9883 211.6094)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          p
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 793.4375 211.6094)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          o
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 800.8867 211.6094)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          r
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 806.5508 211.6094)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          e
+                        </text>
+                      </g>
+                      <g display="none">
+                        <text
+                          transform="matrix(1 0 0 1 770.6484 221.2031)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          C
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 779.4258 221.2031)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          h
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 786.875 221.2031)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          a
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 794.3242 221.2031)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          n
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 801.7734 221.2031)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          g
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 809.2227 221.2031)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          i
+                        </text>
+                      </g>
+                      <g display="none">
+                        <text
+                          transform="matrix(1 0 0 1 770.6484 221.2031)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          C
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 779.4258 221.2031)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          h
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 786.875 221.2031)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          a
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 794.3242 221.2031)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          n
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 801.7734 221.2031)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          g
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 809.2227 221.2031)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          i
+                        </text>
+                      </g>
+                      <g display="none">
+                        <text
+                          transform="matrix(1 0 0 1 769.4375 230.7969)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          A
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 777.7734 230.7969)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          i
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 782.5508 230.7969)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          r
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 788.2148 230.7969)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          p
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 795.6641 230.7969)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          o
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 803.1133 230.7969)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          r
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 808.7773 230.7969)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          t
+                        </text>
+                      </g>
+                      <g display="none">
+                        <text
+                          transform="matrix(1 0 0 1 769.4375 230.7969)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          A
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 777.7734 230.7969)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          i
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 782.5508 230.7969)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          r
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 788.2148 230.7969)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          p
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 795.6641 230.7969)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          o
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 803.1133 230.7969)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          r
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 808.7773 230.7969)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          t
+                        </text>
+                      </g>
+                      <g display="none">
+                        <text
+                          transform="matrix(1 0 0 1 750.5273 211.6094)"
+                          display="inline"
+                          fill="#15607A"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          S
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 758.8633 211.6094)"
+                          display="inline"
+                          fill="#15607A"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          i
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 763.6406 211.6094)"
+                          display="inline"
+                          fill="#15607A"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          n
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 771.0898 211.6094)"
+                          display="inline"
+                          fill="#15607A"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          g
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 778.5391 211.6094)"
+                          display="inline"
+                          fill="#15607A"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          a
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 785.9883 211.6094)"
+                          display="inline"
+                          fill="#15607A"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          p
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 793.4375 211.6094)"
+                          display="inline"
+                          fill="#15607A"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          o
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 800.8867 211.6094)"
+                          display="inline"
+                          fill="#15607A"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          r
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 806.5508 211.6094)"
+                          display="inline"
+                          fill="#15607A"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          e
+                        </text>
+                      </g>
+                      <g display="none">
+                        <text
+                          transform="matrix(1 0 0 1 770.6484 221.2031)"
+                          display="inline"
+                          fill="#15607A"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          C
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 779.4258 221.2031)"
+                          display="inline"
+                          fill="#15607A"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          h
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 786.875 221.2031)"
+                          display="inline"
+                          fill="#15607A"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          a
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 794.3242 221.2031)"
+                          display="inline"
+                          fill="#15607A"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          n
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 801.7734 221.2031)"
+                          display="inline"
+                          fill="#15607A"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          g
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 809.2227 221.2031)"
+                          display="inline"
+                          fill="#15607A"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          i
+                        </text>
+                      </g>
+                      <g display="none">
+                        <text
+                          transform="matrix(1 0 0 1 769.4375 230.7969)"
+                          display="inline"
+                          fill="#15607A"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          A
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 777.7734 230.7969)"
+                          display="inline"
+                          fill="#15607A"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          i
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 782.5508 230.7969)"
+                          display="inline"
+                          fill="#15607A"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          r
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 788.2148 230.7969)"
+                          display="inline"
+                          fill="#15607A"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          p
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 795.6641 230.7969)"
+                          display="inline"
+                          fill="#15607A"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          o
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 803.1133 230.7969)"
+                          display="inline"
+                          fill="#15607A"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          r
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 808.7773 230.7969)"
+                          display="inline"
+                          fill="#15607A"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          t
+                        </text>
+                      </g>
+                    </g>
+                    <g id="hawpar" data-name="hawpar">
+                      <path
+                        fill="#15607A"
+                        d="M418,361l-6.5,5h13L418,361z M412.5,367c-0.56,0-0.92,0.46-1,1v7l-1.74,3c-0.16,0.26-0.26,0.36-0.26,0.5
+				c0,0.5,0.64,0.5,1,0.5h15c0.36,0,1,0,1-0.5c0-0.14-0.08-0.22-0.24-0.5l-1.76-3v-7c0-0.56-0.44-1-1-1H412.5z M414.5,369
+				c0.5,0,1,0,1.5,0s1,1,1,1l1,2.5l1-2.5c0.22-0.56,0.5-1,1-1s1,0,1.5,0c0.56,0,1,0.44,1,1v5c0,0.5-0.5,1-1,1s-1-0.5-1-1v-4l-1.5,3
+				c0,0-0.5,1-1,1s-1-1-1-1l-1.5-3v4c0,0.5-0.5,1-1,1s-1-0.5-1-1v-5C413.5,369.44,413.94,369,414.5,369z"
+                      />
+                      <g display="none">
+                        <text
+                          transform="matrix(1 0 0 1 374.5723 393)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          H
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 383.3496 393)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          a
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 390.7988 393)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          w
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 399.5762 393)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        ></text>
+                        <text
+                          transform="matrix(1 0 0 1 404.7988 393)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          P
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 413.1348 393)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          a
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 420.584 393)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          r
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 426.248 393)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        ></text>
+                        <text
+                          transform="matrix(1 0 0 1 431.4707 393)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          V
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 439.6621 393)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          i
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 444.4395 393)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          l
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 449.2168 393)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          l
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 453.9941 393)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          a
+                        </text>
+                      </g>
+                      <g display="none">
+                        <text
+                          transform="matrix(1 0 0 1 374.5723 393)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          H
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 383.3496 393)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          a
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 390.7988 393)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          w
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 399.5762 393)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        ></text>
+
+                        <text
+                          transform="matrix(1 0 0 1 404.7988 393)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          P
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 413.1348 393)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          a
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 420.584 393)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          r
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 426.248 393)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        ></text>
+
+                        <text
+                          transform="matrix(1 0 0 1 431.4707 393)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          V
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 439.6621 393)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          i
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 444.4395 393)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          l
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 449.2168 393)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          l
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 453.9941 393)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          a
+                        </text>
+                      </g>
+                      <g display="none">
+                        <text
+                          transform="matrix(1 0 0 1 374.5723 393)"
+                          display="inline"
+                          fill="#1D81A2"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          H
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 383.3496 393)"
+                          display="inline"
+                          fill="#1D81A2"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          a
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 390.7988 393)"
+                          display="inline"
+                          fill="#1D81A2"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          w
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 399.5762 393)"
+                          display="inline"
+                          fill="#1D81A2"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        ></text>
+                        <text
+                          transform="matrix(1 0 0 1 404.7988 393)"
+                          display="inline"
+                          fill="#1D81A2"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          P
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 413.1348 393)"
+                          display="inline"
+                          fill="#1D81A2"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          a
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 420.584 393)"
+                          display="inline"
+                          fill="#1D81A2"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          r
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 426.248 393)"
+                          display="inline"
+                          fill="#1D81A2"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        ></text>
+                        <text
+                          transform="matrix(1 0 0 1 431.4707 393)"
+                          display="inline"
+                          fill="#1D81A2"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          V
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 439.6621 393)"
+                          display="inline"
+                          fill="#1D81A2"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          i
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 444.4395 393)"
+                          display="inline"
+                          fill="#1D81A2"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          l
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 449.2168 393)"
+                          display="inline"
+                          fill="#1D81A2"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          l
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 453.9941 393)"
+                          display="inline"
+                          fill="#1D81A2"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          a
+                        </text>
+                      </g>
+                    </g>
+                    <g id="mandai" data-name="mandai">
+                      <path
+                        fill="#15607A"
+                        d="M447.5,157.5c-2,3-3.78,5-6,7c-2.12,1.9-6,1.26-6,4v1c0,1,1,1.96,1,3v1c0,1.5-0.5,1.5-1,3h1l2-3v3h1v-5
+				c0,0,0-1,1-1s1,1,1,1v5h1V172l1,1.5l1,3h1l-1.54-6.28c0.6-0.36,0.54-1.02,0.54-1.72c0-0.94,0-2,0-3l4-5.5l1.44,0.44
+				c0.3,0.1,0.56,0.06,0.56-0.2c0-0.5-0.32-0.6-0.5-0.74L447.5,157.5z"
+                      />
+                      <g display="none">
+                        <text
+                          transform="matrix(1 0 0 1 420.8887 189)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          M
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 430.5527 189)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          a
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 438.002 189)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          n
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 445.4512 189)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          d
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 452.9004 189)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          a
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 460.3496 189)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          i
+                        </text>
+                      </g>
+                      <g display="none">
+                        <text
+                          transform="matrix(1 0 0 1 420.8887 189)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          M
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 430.5527 189)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          a
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 438.002 189)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          n
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 445.4512 189)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          d
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 452.9004 189)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          a
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 460.3496 189)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          i
+                        </text>
+                      </g>
+                      <g display="none">
+                        <text
+                          transform="matrix(1 0 0 1 422.002 198.5938)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          N
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 430.7793 198.5938)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          a
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 438.2285 198.5938)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          t
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 443.4512 198.5938)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          u
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 450.9004 198.5938)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          r
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 456.5645 198.5938)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          e
+                        </text>
+                      </g>
+                      <g display="none">
+                        <text
+                          transform="matrix(1 0 0 1 422.002 198.5938)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          N
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 430.7793 198.5938)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          a
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 438.2285 198.5938)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          t
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 443.4512 198.5938)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          u
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 450.9004 198.5938)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          r
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 456.5645 198.5938)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          e
+                        </text>
+                      </g>
+                      <g display="none">
+                        <text
+                          transform="matrix(1 0 0 1 416.5586 208.1875)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          P
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 424.8945 208.1875)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          r
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 430.5586 208.1875)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          e
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 438.0078 208.1875)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          c
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 445.0078 208.1875)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          i
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 449.7852 208.1875)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          n
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 457.2344 208.1875)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          c
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 464.2344 208.1875)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          t
+                        </text>
+                      </g>
+                      <g display="none">
+                        <text
+                          transform="matrix(1 0 0 1 416.5586 208.1875)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          P
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 424.8945 208.1875)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          r
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 430.5586 208.1875)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          e
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 438.0078 208.1875)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          c
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 445.0078 208.1875)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          i
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 449.7852 208.1875)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          n
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 457.2344 208.1875)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          c
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 464.2344 208.1875)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          t
+                        </text>
+                      </g>
+                      <g display="none">
+                        <text
+                          transform="matrix(1 0 0 1 420.8887 189)"
+                          display="inline"
+                          fill="#1D81A2"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          M
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 430.5527 189)"
+                          display="inline"
+                          fill="#1D81A2"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          a
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 438.002 189)"
+                          display="inline"
+                          fill="#1D81A2"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          n
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 445.4512 189)"
+                          display="inline"
+                          fill="#1D81A2"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          d
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 452.9004 189)"
+                          display="inline"
+                          fill="#1D81A2"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          a
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 460.3496 189)"
+                          display="inline"
+                          fill="#1D81A2"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          i
+                        </text>
+                      </g>
+                      <g display="none">
+                        <text
+                          transform="matrix(1 0 0 1 422.002 198.5938)"
+                          display="inline"
+                          fill="#1D81A2"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          N
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 430.7793 198.5938)"
+                          display="inline"
+                          fill="#1D81A2"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          a
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 438.2285 198.5938)"
+                          display="inline"
+                          fill="#1D81A2"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          t
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 443.4512 198.5938)"
+                          display="inline"
+                          fill="#1D81A2"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          u
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 450.9004 198.5938)"
+                          display="inline"
+                          fill="#1D81A2"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          r
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 456.5645 198.5938)"
+                          display="inline"
+                          fill="#1D81A2"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          e
+                        </text>
+                      </g>
+                      <g display="none">
+                        <text
+                          transform="matrix(1 0 0 1 416.5586 208.1875)"
+                          display="inline"
+                          fill="#1D81A2"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          P
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 424.8945 208.1875)"
+                          display="inline"
+                          fill="#1D81A2"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          r
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 430.5586 208.1875)"
+                          display="inline"
+                          fill="#1D81A2"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          e
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 438.0078 208.1875)"
+                          display="inline"
+                          fill="#1D81A2"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          c
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 445.0078 208.1875)"
+                          display="inline"
+                          fill="#1D81A2"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          i
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 449.7852 208.1875)"
+                          display="inline"
+                          fill="#1D81A2"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          n
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 457.2344 208.1875)"
+                          display="inline"
+                          fill="#1D81A2"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          c
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 464.2344 208.1875)"
+                          display="inline"
+                          fill="#1D81A2"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        ></text>
+                      </g>
+                    </g>
+                    <g id="west" data-name="west">
+                      <path
+                        fill="#333333"
+                        d="M337.641,268.727c0.002,0.676-0.14,1.346-0.416,1.963c-0.728,1.625-4.225,6.318-4.225,6.318
+				s-3.484-4.693-4.225-6.318c-0.276-0.617-0.418-1.287-0.416-1.963c-0.022-2.585,2.056-4.697,4.641-4.719c0,0,0,0,0,0
+				C335.585,264.029,337.662,266.142,337.641,268.727C337.641,268.726,337.641,268.726,337.641,268.727z"
+                      />
+                      <path
+                        fill="#333333"
+                        d="M337.641,268.727c0.002,0.676-0.14,1.346-0.416,1.963c-0.728,1.625-4.225,6.318-4.225,6.318
+				s-3.484-4.693-4.225-6.318c-0.276-0.617-0.418-1.287-0.416-1.963c-0.022-2.585,2.056-4.697,4.641-4.719c0,0,0,0,0,0
+				C335.585,264.029,337.662,266.142,337.641,268.727C337.641,268.726,337.641,268.726,337.641,268.727z"
+                      />
+                      <path
+                        fill="#333333"
+                        d="M331.641,265.727c0.002,0.676-0.14,1.346-0.416,1.963c-0.728,1.625-4.225,6.318-4.225,6.318
+				s-3.484-4.693-4.225-6.318c-0.276-0.617-0.418-1.287-0.416-1.963c-0.022-2.585,2.056-4.697,4.641-4.719c0,0,0,0,0,0
+				C329.585,261.029,331.662,263.142,331.641,265.727C331.641,265.726,331.641,265.726,331.641,265.727z"
+                      />
+                      <path
+                        fill="#333333"
+                        d="M332.641,245.726c0.002,0.676-0.14,1.346-0.416,1.963c-0.728,1.625-4.225,6.318-4.225,6.318
+				s-3.484-4.693-4.225-6.318c-0.276-0.617-0.418-1.287-0.416-1.963c-0.022-2.585,2.056-4.697,4.641-4.719c0,0,0,0,0,0
+				C330.585,241.029,332.662,243.142,332.641,245.726C332.641,245.726,332.641,245.726,332.641,245.726z"
+                      />
+                      <path
+                        fill="#333333"
+                        d="M360.641,201.726c0.002,0.676-0.14,1.346-0.416,1.963c-0.728,1.625-4.225,6.318-4.225,6.318
+				s-3.484-4.693-4.225-6.318c-0.276-0.617-0.418-1.287-0.416-1.963c-0.022-2.585,2.056-4.697,4.641-4.719c0,0,0,0,0,0
+				C358.585,197.029,360.662,199.142,360.641,201.726C360.641,201.726,360.641,201.726,360.641,201.726z"
+                      />
+                    </g>
+                    <path
+                      id="north"
+                      data-name="north"
+                      fill="#333333"
+                      d="M449.641,112.726
+			c0.002,0.676-0.14,1.346-0.416,1.963c-0.728,1.625-4.225,6.318-4.225,6.318s-3.484-4.693-4.225-6.318
+			c-0.276-0.617-0.418-1.287-0.416-1.963c-0.022-2.585,2.056-4.697,4.641-4.719c0,0,0,0,0,0
+			C447.585,108.029,449.662,110.142,449.641,112.726C449.641,112.726,449.641,112.726,449.641,112.726z"
+                    />
+                    <g id="northeast" data-name="northeast">
+                      <path
+                        fill="#333333"
+                        d="M662.641,162.726c0.002,0.676-0.14,1.346-0.416,1.963c-0.728,1.625-4.225,6.318-4.225,6.318
+				s-3.484-4.693-4.225-6.318c-0.276-0.617-0.418-1.287-0.416-1.963c-0.022-2.585,2.056-4.697,4.641-4.719c0,0,0,0,0,0
+				C660.585,158.029,662.662,160.142,662.641,162.726C662.641,162.726,662.641,162.726,662.641,162.726z"
+                      />
+                      <path
+                        fill="#333333"
+                        d="M620.641,186.726c0.002,0.676-0.14,1.346-0.416,1.963c-0.728,1.625-4.225,6.318-4.225,6.318
+				s-3.484-4.693-4.225-6.318c-0.276-0.617-0.418-1.287-0.416-1.963c-0.022-2.585,2.056-4.697,4.641-4.719c0,0,0,0,0,0
+				C618.585,182.029,620.662,184.142,620.641,186.726C620.641,186.726,620.641,186.726,620.641,186.726z"
+                      />
+                      <path
+                        fill="#333333"
+                        d="M622.641,182.726c0.002,0.676-0.14,1.346-0.416,1.963c-0.728,1.625-4.225,6.318-4.225,6.318
+				s-3.484-4.693-4.225-6.318c-0.276-0.617-0.418-1.287-0.416-1.963c-0.022-2.585,2.056-4.697,4.641-4.719c0,0,0,0,0,0
+				C620.585,178.029,622.662,180.142,622.641,182.726C622.641,182.726,622.641,182.726,622.641,182.726z"
+                      />
+                    </g>
+                    <path
+                      id="repeat4"
+                      data-name="repeat4"
+                      fill="#333333"
+                      d="M732.641,222.726
+			c0.002,0.676-0.14,1.346-0.416,1.963c-0.728,1.625-4.225,6.318-4.225,6.318s-3.484-4.693-4.225-6.318
+			c-0.276-0.617-0.418-1.287-0.416-1.963c-0.022-2.585,2.056-4.697,4.641-4.719c0,0,0,0,0,0
+			C730.585,218.029,732.662,220.142,732.641,222.726C732.641,222.726,732.641,222.726,732.641,222.726z"
+                    />
+                    <path
+                      id="repeat3"
+                      data-name="repeat3"
+                      fill="#333333"
+                      d="M689.641,282.727
+			c0.002,0.676-0.14,1.346-0.416,1.963c-0.728,1.625-4.225,6.318-4.225,6.318s-3.484-4.693-4.225-6.318
+			c-0.276-0.617-0.418-1.287-0.416-1.963c-0.022-2.585,2.056-4.697,4.641-4.719c0,0,0,0,0,0
+			C687.585,278.029,689.662,280.142,689.641,282.727C689.641,282.726,689.641,282.726,689.641,282.727z"
+                    />
+                    <g id="centre" data-name="centre">
+                      <path
+                        fill="#333333"
+                        d="M591.641,251.726c0.002,0.676-0.14,1.346-0.416,1.963c-0.728,1.625-4.225,6.318-4.225,6.318
+				s-3.484-4.693-4.225-6.318c-0.276-0.617-0.418-1.287-0.416-1.963c-0.022-2.585,2.056-4.697,4.641-4.719c0,0,0,0,0,0
+				C589.585,247.029,591.662,249.142,591.641,251.726C591.641,251.726,591.641,251.726,591.641,251.726z"
+                      />
+                      <path
+                        fill="#333333"
+                        d="M560.641,268.727c0.002,0.676-0.14,1.346-0.416,1.963c-0.728,1.625-4.225,6.318-4.225,6.318
+				s-3.484-4.693-4.225-6.318c-0.276-0.617-0.418-1.287-0.416-1.963c-0.022-2.585,2.056-4.697,4.641-4.719c0,0,0,0,0,0
+				C558.585,264.029,560.662,266.142,560.641,268.727C560.641,268.726,560.641,268.726,560.641,268.727z"
+                      />
+                      <path
+                        fill="#333333"
+                        d="M562.641,286.727c0.002,0.676-0.14,1.346-0.416,1.963c-0.728,1.625-4.225,6.318-4.225,6.318
+				s-3.484-4.693-4.225-6.318c-0.276-0.617-0.418-1.287-0.416-1.963c-0.022-2.585,2.056-4.697,4.641-4.719c0,0,0,0,0,0
+				C560.585,282.029,562.662,284.142,562.641,286.727C562.641,286.726,562.641,286.726,562.641,286.727z"
+                      />
+                    </g>
+                    <g id="south" data-name="south">
+                      <path
+                        fill="#333333"
+                        d="M485.641,351.727c0.002,0.676-0.14,1.346-0.416,1.963c-0.728,1.625-4.225,6.318-4.225,6.318
+				s-3.484-4.693-4.225-6.318c-0.276-0.617-0.418-1.287-0.416-1.963c-0.022-2.585,2.056-4.697,4.641-4.719c0,0,0,0,0,0
+				C483.585,347.029,485.662,349.142,485.641,351.727C485.641,351.726,485.641,351.726,485.641,351.727z"
+                      />
+                      <path
+                        id="repeat2"
+                        data-name="repeat2"
+                        fill="#333333"
+                        d="M438.641,360.727
+				c0.002,0.676-0.14,1.346-0.416,1.963c-0.728,1.625-4.225,6.318-4.225,6.318s-3.484-4.693-4.225-6.318
+				c-0.276-0.617-0.418-1.287-0.416-1.963c-0.022-2.585,2.056-4.697,4.641-4.719c0,0,0,0,0,0
+				C436.585,356.029,438.662,358.142,438.641,360.727C438.641,360.726,438.641,360.726,438.641,360.727z"
+                      />
+                      <path
+                        fill="#333333"
+                        d="M458.641,316.727c0.002,0.676-0.14,1.346-0.416,1.963c-0.728,1.625-4.225,6.318-4.225,6.318
+				s-3.484-4.693-4.225-6.318c-0.276-0.617-0.418-1.287-0.416-1.963c-0.022-2.585,2.056-4.697,4.641-4.719c0,0,0,0,0,0
+				C456.585,312.029,458.662,314.142,458.641,316.727C458.641,316.726,458.641,316.726,458.641,316.727z"
+                      />
+                      <path
+                        id="repeat1"
+                        data-name="repeat1"
+                        fill="#333333"
+                        d="M456.641,312.727
+				c0.002,0.676-0.14,1.346-0.416,1.963c-0.728,1.625-4.225,6.318-4.225,6.318s-3.484-4.693-4.225-6.318
+				c-0.276-0.617-0.418-1.287-0.416-1.963c-0.022-2.585,2.056-4.697,4.641-4.719c0,0,0,0,0,0
+				C454.585,308.029,456.662,310.142,456.641,312.727C456.641,312.726,456.641,312.726,456.641,312.727z"
+                      />
+                      <path
+                        fill="#333333"
+                        d="M401.641,326.727c0.002,0.676-0.14,1.346-0.416,1.963c-0.728,1.625-4.225,6.318-4.225,6.318
+				s-3.484-4.693-4.225-6.318c-0.276-0.617-0.418-1.287-0.416-1.963c-0.022-2.585,2.056-4.697,4.641-4.719c0,0,0,0,0,0
+				C399.585,322.029,401.662,324.142,401.641,326.727C401.641,326.726,401.641,326.726,401.641,326.727z"
+                      />
+                      <path
+                        fill="#333333"
+                        d="M404.641,304.727c0.002,0.676-0.14,1.346-0.416,1.963c-0.728,1.625-4.225,6.318-4.225,6.318
+				s-3.484-4.693-4.225-6.318c-0.276-0.617-0.418-1.287-0.416-1.963c-0.022-2.585,2.056-4.697,4.641-4.719c0,0,0,0,0,0
+				C402.585,300.029,404.662,302.142,404.641,304.727C404.641,304.726,404.641,304.726,404.641,304.727z"
+                      />
+                    </g>
+                    <g id="home" data-name="home">
+                      <path
+                        id="Home-2"
+                        data-name="Home"
+                        fill="#09BB9F"
+                        d="M387.017,244.62
+				c4.293,3.72,7.627,6.58,10,8.58c0.267,0.213,0.4,0.48,0.4,0.8c0,0.28-0.1,0.527-0.3,0.74s-0.44,0.313-0.72,0.3h-2.1v7.28
+				c0,0.28-0.1,0.527-0.3,0.74c-0.2,0.213-0.44,0.32-0.72,0.32h-3.12c-0.293,0-0.54-0.107-0.74-0.32
+				c-0.2-0.213-0.307-0.46-0.32-0.74v-4.16h-4.18v4.16c0,0.28-0.1,0.527-0.3,0.74c-0.2,0.213-0.44,0.32-0.72,0.32h-3.12
+				c-0.28,0-0.527-0.107-0.74-0.32c-0.213-0.213-0.32-0.46-0.32-0.74v-7.28h-2.06c-0.293,0-0.54-0.1-0.74-0.3
+				c-0.2-0.2-0.307-0.447-0.32-0.74c-0.013-0.293,0.113-0.56,0.38-0.8L387.017,244.62z"
+                      />
+                      <g display="none">
+                        <text
+                          transform="matrix(1 0 0 1 399.3223 262.2031)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          H
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 408.0996 262.2031)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          o
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 415.5488 262.2031)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          m
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 425.2129 262.2031)"
+                          display="inline"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          e
+                        </text>
+                      </g>
+                      <g display="none">
+                        <text
+                          transform="matrix(1 0 0 1 399.3223 262.2031)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          H
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 408.0996 262.2031)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          o
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 415.5488 262.2031)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          m
+                        </text>
+
+                        <text
+                          transform="matrix(1 0 0 1 425.2129 262.2031)"
+                          display="inline"
+                          fill="none"
+                          stroke="#F2F3F0"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          e
+                        </text>
+                      </g>
+                      <g display="none">
+                        <text
+                          transform="matrix(1 0 0 1 399.3223 262.2031)"
+                          display="inline"
+                          fill="#1D81A2"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          H
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 408.0996 262.2031)"
+                          display="inline"
+                          fill="#1D81A2"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          o
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 415.5488 262.2031)"
+                          display="inline"
+                          fill="#1D81A2"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          m
+                        </text>
+                        <text
+                          transform="matrix(1 0 0 1 425.2129 262.2031)"
+                          display="inline"
+                          fill="#1D81A2"
+                          font-family="'ArialMT'"
+                          font-size="8px"
+                        >
+                          e
+                        </text>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+                <style>
+                  #g-new-delivery-map-Artboard_1-interactions-img rect,
+                  #g-new-delivery-map-Artboard_1-interactions-img circle,
+                  #g-new-delivery-map-Artboard_1-interactions-img path,
+                  #g-new-delivery-map-Artboard_1-interactions-img line,
+                  #g-new-delivery-map-Artboard_1-interactions-img polyline,
+                  #g-new-delivery-map-Artboard_1-interactions-img polygon {
+                    vector-effect: non-scaling-stroke;
+                  }
+                </style>
+              </svg>
+
+              <div
+                id="g-ai0-3"
+                class="g-interactions g-aiAbs g-aiPointText"
+                style="
+                  top: 31.1219%;
+                  margin-top: -5.7px;
+                  left: 42.0889%;
+                  width: 66px;
+                "
+              >
+                <p class="g-pstyle1" id="mandaiText">Mandai<br>Nature<br>Precinct</p>
+              </div>
+              
+              
+              <div
+                id="g-ai0-12"
+                class="g-interactions g-aiAbs g-aiPointText"
+                style="
+                  top: 34.9552%;
+                  margin-top: -5.7px;
+                  left: 75.0527%;
+                  width: 85px;
+                "
+              >
+                <p class="g-pstyle1" id="airportText">Singapore<br>Changi<br>Airport</p>
+              </div>
+              
+              
+              <div
+                id="g-ai0-21"
+                class="g-interactions g-aiAbs g-aiPointText"
+                style="
+                  top: 43.2886%;
+                  margin-top: -5.7px;
+                  left: 39.9322%;
+                  width: 55px;
+                "
+              >
+                <p class="g-pstyle1" id="homeText">Home</p>
+              </div>
+              
+              <div
+                id="g-ai0-23"
+                class="g-interactions g-aiAbs g-aiPointText"
+                style="
+                  top: 65.1219%;
+                  margin-top: -5.7px;
+                  left: 37.4572%;
+                  width: 109px;
+                "
+              >
+                <p class="g-pstyle1" id="hawparvillaText">Haw Par Villa</p>
+              </div>
+              
+              </div>
+            </div>
+          </div>
+
+          <!-- End ai2html - 2022-08-03 22:07 -->
+        </div>
+        <!-- do not delete -->
+      </div>
+
+      <div class="scrolly-overlay">
+        <div class="step" id="step-zero">
+          <p>
+            We set off from our home &#127969; in Bukit Batok at 12pm &#128347;
+            and drove southwards.
+          </p>
+        </div>
+        <div class="step" id="step-one">
+          <p>Here, we have two repeat customers.</p>
+        </div>
+        <div class="step" id="step-two">
+          <p>One of them works in a beauty and wellness salon &#128134;.</p>
+        </div>
+        <div class="step" id="step-three">
+          <p>
+            The other one lives in a condo next to Haw Par Villa, a tourist
+            attraction known for its "18 Courts of Hell" &#128520;.
+          </p>
+        </div>
+        <div class="step" id="step-four">
+          <p>
+            Then we drove eastwards to deliver to a few stops in central
+            Singapore. The traffic here is BAD &#128544;.
+          </p>
+        </div>
+        <div class="step" id="step-five">
+          <p>
+            Next, we delivered to a repeat customer who's rarely home when we
+            arrived. I've not seen her in the flesh.
+          </p>
+        </div>
+        <div class="step" id="step-six">
+          <p>
+            And we continued eastwards until we're almost reaching Changi
+            Airport &#128747; on the other end of the island. This stop is
+            worthwhile though as the customer has always ordered many jars from
+            us at once. She's left glowing reviews
+            &#11088;&#11088;&#11088;&#11088;&#11088; for us online too.
+          </p>
+        </div>
+        <div class="step" id="step-seven">
+          <p>
+            We went to a few more stops in the northeast, home to the newer
+            residential districts where many young families live &#128106;.
+          </p>
+        </div>
+        <div class="step" id="step-eight">
+          <p>
+            And we had to make a stop at Woodlands, which is close to the
+            wildlife reserve &#128005; &#128018; &#128024;.
+          </p>
+        </div>
+        <div class="step" id="step-nine">
+          <p>
+            After we've delivered to 4 more customers in the West (one of them a
+            very pleasant repeat customer), it's almost 7pm. We're tired and
+            hungry but happy that we're done for the day &#128512;
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      /* Scrollytelling code goes under here */
+
+      d3.select("#home").classed("hidden", false) 
+      d3.select("#west").classed("hidden", true)
+      d3.select("#northeast").classed("hidden", true)
+      d3.select("#centre").classed("hidden", true)
+      d3.select("#south").classed("hidden", true)
+      d3.select("#north").classed("hidden", true)
+      d3.select("#repeat1").classed("hidden", true)
+      d3.select("#repeat2").classed("hidden", true)
+      d3.select("#repeat3").classed("hidden", true)
+      d3.select("#repeat4").classed("hidden", true)
+      d3.select("#repeat5").classed("hidden", true)
+      d3.select("#routeOne").classed("hidden", true)
+      d3.select("#routeTwo").classed("hidden", true)
+      d3.select("#routeThree").classed("hidden", true)
+      d3.select("#routeFour").classed("hidden", true)
+      d3.select("#routeFive").classed("hidden", true)
+      d3.select("#routeSix").classed("hidden", true)
+      d3.select("#routeSeven").classed("hidden", true)
+      d3.select("#hawpar").classed("hidden", true)
+      d3.select("#hawparvillaText").classed("hidden", true)
+      d3.select("#mandai").classed("hidden", true)
+      d3.select("#mandaiText").classed("hidden", true)
+      d3.select("#airport").classed("hidden", true)
+      d3.select("#airportText").classed("hidden", true)
+      d3.select("#homeText").classed("hidden", true)
+
+      // Step zero in code
+      d3.select("#step-zero").on("stepin", function (e) {
+        console.log("Got to step zero")
+        d3.select("#south").classed("hidden", false)
+        d3.select("#routeOne").classed("hidden", false)
+      })
+
+      //Step zero out code
+      d3.select("#step-zero").on("stepout", function (e) {
+        if (e.detail.direction === "up") {
+          d3.select("#south").classed("hidden", true)
+          d3.select("#routeOne").classed("hidden", true)
+        }
+      })
+
+      // Step one in code
+      d3.select("#step-one").on("stepin", function (e) {
+        console.log("Got to step one")
+        d3.select("#repeat1").classed("hidden", false)
+        d3.select("#repeat2").classed("hidden", false)
+      })
+      // Step one out code
+      d3.select("#step-one").on("stepout", function (e) {
+        if (e.detail.direction === "up") {
+          d3.select("#repeat1").classed("hidden", true)
+          d3.select("#repeat2").classed("hidden", true)
+        }
+      })
+
+      // Step two in code
+      d3.select("#step-two").on("stepin", function (e) {
+        console.log("Got to step two")
+        d3.select("#repeat1").style("stroke", "black")
+      })
+      // Step two out code
+      d3.select("#step-two").on("stepout", function (e) {
+        if (e.detail.direction === "up") {
+          d3.select("#repeat1").style("stroke", "none")
+        }
+      })
+
+      // Step three in code
+      d3.select("#step-three").on("stepin", function (e) {
+        console.log("Got to step three")
+        d3.select("#repeat2").style("stroke", "black")
+        d3.select("#hawpar").classed("hidden", false)
+        d3.select("#hawparvillaText").classed("hidden", false)
+      })
+      //step three out code
+      d3.select("#step-three").on("stepout", function (e) {
+        if (e.detail.direction === "up") {
+          d3.select("#repeat2").style("stroke", "none")
+          d3.select("#hawpar").classed("hidden", true)
+          d3.select("#hawparvillaText").classed("hidden", true)
+        }
+      })
+
+      // Step four in code
+      d3.select("#step-four").on("stepin", function (e) {
+        console.log("Got to step four")
+        d3.select("#centre").classed("hidden", false)
+        d3.select("#routeTwo").classed("hidden", false)
+
+      })
+      //step four out code
+      d3.select("#step-four").on("stepout", function (e) {
+        if (e.detail.direction === "up") {
+          d3.select("#centre").classed("hidden", true)
+          d3.select("#routeTwo").classed("hidden", true)
+        }
+      })
+
+      // Step five in code
+      d3.select("#step-five").on("stepin", function (e) {
+        console.log("Got to step five")
+        d3.select("#repeat3").classed("hidden", false).style("stroke", "black")
+        d3.select("#routeThree").classed("hidden", false)
+      })
+      //step five out code
+      d3.select("#step-five").on("stepout", function (e) {
+        if (e.detail.direction === "up") {
+          d3.select("#repeat3").classed("hidden", true).style("stroke", "none")
+          d3.select("#routeThree").classed("hidden", true)
+        }
+      })
+
+      // Step six in code
+      d3.select("#step-six").on("stepin", function (e) {
+        console.log("Got to step six")
+        d3.select("#repeat4").classed("hidden", false).style("stroke", "black")
+        d3.select("#routeFour").classed("hidden", false)
+        d3.select("#airport").classed("hidden", false)
+        d3.select("#airportText").classed("hidden", false)
+
+      })
+      //step six out code
+      d3.select("#step-six").on("stepout", function (e) {
+        if (e.detail.direction === "up") {
+          d3.select("#repeat4").classed("hidden", true).style("stroke", "none")
+          d3.select("#routeFour").classed("hidden", true)
+          d3.select("#airport").classed("hidden", true)
+        d3.select("#airportText").classed("hidden", true)
+        }
+      })
+
+      // Step seven in code
+      d3.select("#step-seven").on("stepin", function (e) {
+        console.log("Got to step seven")
+        d3.select("#northeast").classed("hidden", false)
+        d3.select("#routeFive").classed("hidden", false)
+
+
+      })
+      //step seven out code
+      d3.select("#step-seven").on("stepout", function (e) {
+        if (e.detail.direction === "up") {
+          d3.select("#northeast").classed("hidden", true)
+          d3.select("#routeFive").classed("hidden", true)
+        }
+      })
+
+      // Step eight in code
+      d3.select("#step-eight").on("stepin", function (e) {
+        console.log("Got to step eight")
+        d3.select("#north").classed("hidden", false)
+        d3.select("#routeSix").classed("hidden", false)
+        d3.select("#mandai").classed("hidden", false)
+        d3.select("#mandaiText").classed("hidden", false)
+      })
+      //step eight out code
+      d3.select("#step-eight").on("stepout", function (e) {
+        if (e.detail.direction === "up") {
+          d3.select("#north").classed("hidden", true)
+          d3.select("#routeSix").classed("hidden", true)
+          d3.select("#mandai").classed("hidden", true)
+          d3.select("#mandaiText").classed("hidden", true)
+
+        }
+      })
+
+      // Step nine in code
+      d3.select("#step-nine").on("stepin", function (e) {
+        // console.log("Got to step nine")
+        d3.select("#west").classed("hidden", false)
+        d3.select("#repeat5").classed("hidden", false).style("stroke", "black")
+        d3.select("#routeSeven").classed("hidden", false)
+
+      })
+
+      //step nine out code
+      d3.select("#step-nine").on("stepout", function (e) {
+        //undo something
+        if (e.detail.direction === "up") {
+          d3.select("#west").classed("hidden", true)
+          d3.select("#repeat5").classed("hidden", true).style("stroke", "none")
+          d3.select("#routeSeven").classed("hidden", true)
+
+        }
+      })
+    </script>
+
+    <script>
+      const scroller = scrollama()
+
+      scroller
+        .setup({
+          step: "#scrolly .scrolly-overlay .step",
+          offset: 0.7,
+          debug: false,
+        })
+        .onStepEnter(function ({ element, index, direction }) {
+          const event = new CustomEvent("stepin", {
+            detail: { direction: direction },
+          })
+          element.dispatchEvent(event)
+        })
+        .onStepExit(function ({ element, index, direction }) {
+          const event = new CustomEvent("stepout", {
+            detail: { direction: direction },
+          })
+          element.dispatchEvent(event)
+        })
+
+      window.addEventListener("resize", scroller.resize)
+    </script>
+
+    <!-- ai2html resizer script -->
+
+    <script type="text/javascript">
+      ;(function () {
+        // only want one resizer on the page
+        if (
+          document.documentElement.className.indexOf("g-resizer-v3-init") > -1
+        )
+          return
+        document.documentElement.className += " g-resizer-v3-init"
+        // require IE9+
+        if (!("querySelector" in document)) return
+        function resizer() {
+          var elements = Array.prototype.slice.call(
+              document.querySelectorAll(".g-artboard[data-min-width]")
+            ),
+            widthById = {}
+          elements.forEach(function (el) {
+            var parent = el.parentNode,
+              width =
+                widthById[parent.id] || parent.getBoundingClientRect().width,
+              minwidth = el.getAttribute("data-min-width"),
+              maxwidth = el.getAttribute("data-max-width")
+            widthById[parent.id] = width
+
+            if (
+              +minwidth <= width &&
+              (+maxwidth >= width || maxwidth === null)
+            ) {
+              el.style.display = "block"
+            } else {
+              el.style.display = "none"
+            }
+          })
+          try {
+            if (window.parent && window.parent.$) {
+              window.parent.$("body").trigger("resizedcontent", [window])
+            }
+            if (window.require) {
+              require(["foundation/main"], function () {
+                require([
+                  "shared/interactive/instances/app-communicator",
+                ], function (AppCommunicator) {
+                  AppCommunicator.triggerResize()
+                })
+              })
+            }
+          } catch (e) {
+            console.log(e)
+          }
+        }
+
+        document.addEventListener("DOMContentLoaded", resizer)
+        // feel free to replace throttle with _.throttle, if available
+        window.addEventListener("resize", throttle(resizer, 200))
+
+        function throttle(func, wait) {
+          // from underscore.js
+          var _now =
+              Date.now ||
+              function () {
+                return new Date().getTime()
+              },
+            context,
+            args,
+            result,
+            timeout = null,
+            previous = 0
+          var later = function () {
+            previous = _now()
+            timeout = null
+            result = func.apply(context, args)
+            if (!timeout) context = args = null
+          }
+          return function () {
+            var now = _now(),
+              remaining = wait - (now - previous)
+            context = this
+            args = arguments
+            if (remaining <= 0 || remaining > wait) {
+              if (timeout) {
+                clearTimeout(timeout)
+                timeout = null
+              }
+              previous = now
+              result = func.apply(context, args)
+              if (!timeout) context = args = null
+            } else if (!timeout && options.trailing !== false) {
+              timeout = setTimeout(later, remaining)
+            }
+            return result
+          }
+        }
+      })()
+    </script>
+
+    <div class="content">
+      <p></p>
+      <p></p>
+      <p>
+        While we're happy to receive and fulfill many orders, we are also keenly
+        aware that our profit margin has been eroded as a result of inflated
+        fuel prices - courtesy of Vladimir Putin's invasion of Ukraine. Take our
+        delivery on July 2 for example. Around 15 per cent of our earnings would
+        have gone to pay for petrol.
+      </p>
+
+      <p>
+        Besides, our ingredient costs and packaging costs have also increased
+        sharply, as our suppliers, too, are grappling with higher transportation
+        costs. And we haven't even talked about the soaring utility bills.
+      </p>
+
+      <p>
+        In any case, the pain is likely to persist as long as the war wages on
+        and the embargo of Russian oil remains. We just have to bite the bullet
+        in the meantime while continuing to delight our customers with our
+        homemade goodness.
+      </p>
+
+      <h5>
+        Check out the author's product listing
+        <a
+          href="https://shopee.sg/Greensmith-Thunder-Tea-Homemade-Lei-Cha-Soup-Paste-%E9%9D%92%E4%B8%80%E8%89%B2%E6%93%82%E8%8C%B6%E9%85%B1-i.344810271.8806174173?sp_atk=54ad4541-fa76-46c6-a39c-ca33e0cc2da8&xptdk=54ad4541-fa76-46c6-a39c-ca33e0cc2da8"
+          target="_blank"
+          >here</a
+        >
+        &#128513;
+      </h5>
+    </div>
+  </body>
+</html>
