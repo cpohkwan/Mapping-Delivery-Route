@@ -6,6 +6,22 @@
     <title>Delivery</title>
 
     <style>
+      
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 2rem 2rem 2rem 2rem;
+        background: white;
+        font-family: "Playfair Display", serif; /*serif font*/
+        font-size: 1.2rem;
+        color: #4a4a4a;
+      }
+      
       #scrolly {
         position: relative;
         padding: 1.5rem 2rem 1.5rem 2rem;
@@ -97,35 +113,45 @@
 
       .content {
         text-align: center;
-        margin: 0 2.5rem 1rem 2.5rem; /*top right bottom left*/
+        margin: 1rem 3rem 1rem 3rem; /*top right bottom left*/
       }
 
-      .content h1 {
+      h1 {
+        font-family: "Playfair Display", serif;
         font-size: 2.5rem;
-        font-family: "Calibri", "Trebuchet MS", sans-serif;
+        font-weight: bold;
+        margin-top: 3rem;
+        margin-bottom: 2rem;
         text-align: center;
       }
 
-      .content byline {
+      .byline {
+        font-family: "Playfair Display", serif;
         font-size: 1.2rem;
-        font-family: "Calibri", "Trebuchet MS", sans-serif;
-        font-style: italic;
+        font-weight: bold;
+        margin-bottom: 2rem;
+      }
+
+      p {
+        margin-bottom: 1rem;
+        line-height: 1.5rem;
         text-align: left;
+        color: #716d6d;
       }
 
-      .content p {
-        font-size: 1.3rem;
-        font-family: "Calibri", "Trebuchet MS", sans-serif;
-        text-align: justify;
-        margin-bottom: 2em;
-      }
-
-      .content h5 {
-        font-weight: normal;
-        font-size: 1rem;
-        font-family: "Calibri", "Trebuchet MS", sans-serif;
-        text-align: center;
+      .caption {
         font-style: italic;
+        margin-bottom: 1.5rem;
+      }
+
+      .section {
+        max-width: 850px;
+        margin: 0 auto;
+      }
+
+      img {
+        max-width: 100%;
+        margin: 2rem 0 0;
       }
 
       #repeat1 {
@@ -161,9 +187,9 @@
   <body>
     <div class="content">
       <h1>Our Long and Expensive Delivery Route</h1>
-      <byline>Story by Cheong Poh Kwan</byline>
-      <p>
-        Covid-19 has turned many bored people in Singapore into small-time
+      <div class="byline">Story by Cheong Poh Kwan</div>
+      
+      <p>Covid-19 has turned many bored people in Singapore into small-time
         home-based business owners, selling everything from handmade soy
         candles, homebrewed coffee to all kinds of grandma recipes on platforms
         like Instagram, Cococart, Carousell and Shopee.
@@ -184,12 +210,11 @@
         width="500"
         height="600"
       />
-      <p></p>
 
-      <h5>
+      <div class="caption">
         This is a keto-friendly version of our Thunder Tea rice set. Image by
         @sgfoodiehunt, an Instagram food reviewer.
-      </h5>
+      </div>
 
       <p>
         You can think of Lei Cha as the Chinese Hakka version of Japanese
@@ -206,11 +231,10 @@
         Your browser does not support the video tag.
       </video>
 
-      <p></p>
 
-      <h5>
+      <div class="caption">
         This video shows the making of our Thunder Tea paste. Video by Pei Rong.
-      </h5>
+      </div>
 
       <p>
         Our Lei Cha soup paste has been quite a hit with our customers, in
@@ -228,6 +252,7 @@
         we've been doing it ourselves, spending hours and hours on the road
         every Saturday to fulfill the orders for the week.
       </p>
+
       <p>
         Here's an example of our very long delivery route on July 2, the day
         when fuel price in Singapore surged to $3.15 or higher per liter -
@@ -2910,8 +2935,7 @@
     </script>
 
     <div class="content">
-      <p></p>
-      <p></p>
+ 
       <p>
         While we're happy to receive and fulfill many orders, we are also keenly
         aware that our profit margin has been eroded as a result of inflated
@@ -2933,7 +2957,7 @@
         homemade goodness.
       </p>
 
-      <h5>
+      <div class="caption">
         Check out the author's product listing
         <a
           href="https://shopee.sg/Greensmith-Thunder-Tea-Homemade-Lei-Cha-Soup-Paste-%E9%9D%92%E4%B8%80%E8%89%B2%E6%93%82%E8%8C%B6%E9%85%B1-i.344810271.8806174173?sp_atk=54ad4541-fa76-46c6-a39c-ca33e0cc2da8&xptdk=54ad4541-fa76-46c6-a39c-ca33e0cc2da8"
@@ -2941,7 +2965,7 @@
           >here</a
         >
         &#128513;
-      </h5>
+      </div>
     </div>
   </body>
 </html>
